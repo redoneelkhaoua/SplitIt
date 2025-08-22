@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q8C9q3xWJJy2DCS87Fgq5q5ZL7TMb8Kd8uaGKDUaZnTYNEN99yQc4RA1tc0yd64Ha9NrKK0wGJ4BBNpKUOjv1g==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

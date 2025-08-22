@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ekMX0u2CWvajkl1Wlb4+HLMNwKsdIWqKAKXXKz3reA2S3uCM1v/FKlbgmQuGOYQjQn/3hJj0sPidrti9Ad6hIw==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Adelphatech\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

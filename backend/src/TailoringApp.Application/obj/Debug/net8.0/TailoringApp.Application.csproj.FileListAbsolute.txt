@@ -1,0 +1,15 @@
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.csproj.AssemblyReference.cache
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.AssemblyInfoInputs.cache
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.AssemblyInfo.cs
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.csproj.CoreCompileInputs.cache
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net8.0\TailoringApp.Application.deps.json
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net8.0\TailoringApp.Application.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net8.0\TailoringApp.Application.pdb
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net8.0\TailoringApp.Domain.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net8.0\TailoringApp.Domain.pdb
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\Tailorin.C403D93B.Up2Date
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\refint\TailoringApp.Application.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.pdb
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\ref\TailoringApp.Application.dll

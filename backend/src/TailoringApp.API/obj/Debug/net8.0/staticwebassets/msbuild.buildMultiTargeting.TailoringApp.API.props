@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TailoringApp.API.props" />
+</Project>
