@@ -146,3 +146,5 @@ c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.API\obj\De
 C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.API\bin\Debug\net8.0\appsettings.json
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.API\bin\Debug\net8.0\appsettings.Development.json
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.API\bin\Debug\net8.0\appsettings.Production.json
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.API\obj\Debug\net8.0\TailoringApp.API.sourcelink.json
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

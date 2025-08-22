@@ -6,6 +6,7 @@ using TailoringApp.Domain.Customers.Entities;
 using TailoringApp.Domain.Customers.ValueObjects;
 using TailoringApp.Domain.Appointments;
 using TailoringApp.Domain.WorkOrders;
+using TailoringApp.Domain.Users;
 
 namespace TailoringApp.Infrastructure.Persistence;
 
@@ -22,6 +23,7 @@ public class TailoringDbContext : DbContext
     public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<Appointment> Appointments => Set<Appointment>();
     public DbSet<WorkOrder> WorkOrders => Set<WorkOrder>();
+    public DbSet<User> Users => Set<User>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -101,6 +101,43 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
                     b.ToTable("Customers", (string)null);
                 });
 
+            modelBuilder.Entity("TailoringApp.Domain.Users.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Enabled")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
+
+                    b.ToTable("Users", (string)null);
+                });
+
             modelBuilder.Entity("TailoringApp.Domain.WorkOrders.WorkOrder", b =>
                 {
                     b.Property<Guid>("Id")
@@ -303,6 +340,29 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("TailoringApp.Domain.WorkOrders.WorkOrder", b =>
                 {
+                    b.OwnsOne("TailoringApp.Domain.Common.Money", "Discount", b1 =>
+                        {
+                            b1.Property<Guid>("WorkOrderId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<decimal>("Amount")
+                                .HasColumnType("decimal(18,2)")
+                                .HasColumnName("DiscountAmount");
+
+                            b1.Property<string>("Currency")
+                                .IsRequired()
+                                .HasMaxLength(3)
+                                .HasColumnType("nvarchar(3)")
+                                .HasColumnName("DiscountCurrency");
+
+                            b1.HasKey("WorkOrderId");
+
+                            b1.ToTable("WorkOrders");
+
+                            b1.WithOwner()
+                                .HasForeignKey("WorkOrderId");
+                        });
+
                     b.OwnsMany("TailoringApp.Domain.WorkOrders.WorkOrderItem", "Items", b1 =>
                         {
                             b1.Property<Guid>("WorkOrderId")
@@ -351,6 +411,8 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
                             b1.Navigation("UnitPrice")
                                 .IsRequired();
                         });
+
+                    b.Navigation("Discount");
 
                     b.Navigation("Items");
                 });

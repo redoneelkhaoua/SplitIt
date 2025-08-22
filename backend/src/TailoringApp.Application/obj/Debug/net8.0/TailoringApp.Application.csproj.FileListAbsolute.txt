@@ -13,3 +13,4 @@ c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Applicatio
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\refint\TailoringApp.Application.dll
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.pdb
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\ref\TailoringApp.Application.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net8.0\TailoringApp.Application.sourcelink.json

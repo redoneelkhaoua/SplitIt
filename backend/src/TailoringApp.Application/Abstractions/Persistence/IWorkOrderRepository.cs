@@ -13,6 +13,10 @@ public interface IWorkOrderRepository
         int page,
         int pageSize,
         string? sortBy,
-        bool desc,
+    bool desc,
+    string? status,
+    DateTime? fromUtc,
+    DateTime? toUtc,
+    string? search,
         CancellationToken ct);
 }

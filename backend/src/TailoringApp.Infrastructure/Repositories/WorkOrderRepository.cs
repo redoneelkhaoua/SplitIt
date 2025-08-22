@@ -21,9 +21,28 @@ public sealed class WorkOrderRepository : IWorkOrderRepository
 
     public Task SaveChangesAsync(CancellationToken ct) => _db.SaveChangesAsync(ct);
 
-    public async Task<(IReadOnlyList<WorkOrder> Items, int TotalCount)> GetForCustomerAsync(Guid customerId, int page, int pageSize, string? sortBy, bool desc, CancellationToken ct)
+    public async Task<(IReadOnlyList<WorkOrder> Items, int TotalCount)> GetForCustomerAsync(Guid customerId, int page, int pageSize, string? sortBy, bool desc, string? status, DateTime? fromUtc, DateTime? toUtc, string? search, CancellationToken ct)
     {
-    var query = _db.Set<WorkOrder>().AsNoTracking().Include(x => x.Items).Where(x => x.CustomerId == customerId && x.Enabled);
+        var query = _db.Set<WorkOrder>().AsNoTracking().Include(x => x.Items)
+            .Where(x => x.CustomerId == customerId && x.Enabled);
+
+        if (!string.IsNullOrWhiteSpace(status) && Enum.TryParse<WorkOrderStatus>(status, true, out var st))
+        {
+            query = query.Where(x => x.Status == st);
+        }
+        if (fromUtc.HasValue)
+        {
+            query = query.Where(x => x.CreatedDate >= fromUtc.Value);
+        }
+        if (toUtc.HasValue)
+        {
+            query = query.Where(x => x.CreatedDate <= toUtc.Value);
+        }
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            var s = search.ToLower();
+            query = query.Where(x => x.Items.Any(i => i.Description.ToLower().Contains(s)));
+        }
 
         query = (sortBy?.ToLowerInvariant(), desc) switch
         {
@@ -34,8 +53,8 @@ public sealed class WorkOrderRepository : IWorkOrderRepository
             _ => query.OrderByDescending(x => x.CreatedDate)
         };
 
-        var total = await query.CountAsync(ct);
-        var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+    var total = await query.CountAsync(ct);
+    var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
         return (items, total);
     }
 }

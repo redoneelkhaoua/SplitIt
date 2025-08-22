@@ -12,7 +12,17 @@ public sealed class GetCustomerWorkOrdersQueryHandler : IRequestHandler<GetCusto
 
     public async Task<(IReadOnlyList<WorkOrderDto> Items, int TotalCount)> Handle(GetCustomerWorkOrdersQuery request, CancellationToken ct)
     {
-        var (items, total) = await _repo.GetForCustomerAsync(request.CustomerId, request.Page, request.PageSize, request.SortBy, request.Desc, ct);
+        var (items, total) = await _repo.GetForCustomerAsync(
+            request.CustomerId,
+            request.Page,
+            request.PageSize,
+            request.SortBy,
+            request.Desc,
+            request.Status,
+            request.FromUtc,
+            request.ToUtc,
+            request.Search,
+            ct);
         var dtoItems = items.Select(x => new WorkOrderDto(
             x.Id,
             x.CustomerId,

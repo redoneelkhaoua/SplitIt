@@ -466,3 +466,5 @@ c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Test
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\obj\Debug\net8.0\TailoringApp.API.Tests.pdb
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\obj\Debug\net8.0\TailoringApp.API.Tests.genruntimeconfig.cache
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\obj\Debug\net8.0\ref\TailoringApp.API.Tests.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\obj\Debug\net8.0\TailoringApp.API.Tests.sourcelink.json
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

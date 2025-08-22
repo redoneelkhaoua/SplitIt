@@ -99,7 +99,21 @@ public sealed class WorkOrder : Entity
         if (!string.Equals(discount.Currency, Currency, StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException("Discount currency must match work order currency");
         if (discount.Amount < 0) throw new ArgumentOutOfRangeException(nameof(discount.Amount));
-        Discount = discount.Amount == 0 ? null : discount;
+        if (discount.Amount == 0)
+        {
+            Discount = null;
+            return;
+        }
+        // Cap discount so it never exceeds current subtotal snapshot
+        var cap = Subtotal;
+        if (discount.Amount > cap.Amount)
+        {
+            Discount = cap;
+        }
+        else
+        {
+            Discount = discount;
+        }
     }
 
     public void ClearDiscount()

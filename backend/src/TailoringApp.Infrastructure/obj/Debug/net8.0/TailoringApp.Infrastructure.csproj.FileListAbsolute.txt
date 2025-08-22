@@ -17,3 +17,4 @@ c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Infrastruc
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Infrastructure\obj\Debug\net8.0\TailoringApp.Infrastructure.pdb
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Infrastructure\obj\Debug\net8.0\TailoringApp.Infrastructure.genruntimeconfig.cache
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Infrastructure\obj\Debug\net8.0\ref\TailoringApp.Infrastructure.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Infrastructure\obj\Debug\net8.0\TailoringApp.Infrastructure.sourcelink.json

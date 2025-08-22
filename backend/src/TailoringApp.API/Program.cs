@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TailoringApp.Infrastructure.Persistence;
 using Microsoft.OpenApi.Models;
+using System.Security.Cryptography;
+using TailoringApp.Domain.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +50,18 @@ if (!app.Environment.IsEnvironment("Testing"))
     using var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetRequiredService<TailoringDbContext>();
     db.Database.Migrate();
+    if (!db.Users.Any())
+    {
+        // simple SHA256 hash demo (not for production)
+        string Hash(string input)
+        {
+            using var sha = SHA256.Create();
+            return Convert.ToHexString(sha.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input)));
+        }
+        db.Users.Add(User.Create("admin", Hash("admin123"), "Admin"));
+        db.Users.Add(User.Create("staff", Hash("staff123"), "Staff"));
+        db.SaveChanges();
+    }
 }
 
 app.UseExceptionHandler(errorApp =>
@@ -77,6 +91,8 @@ app.UseExceptionHandler(errorApp =>
 });
 
 app.UseCors(CorsPolicy);
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 // Basic health endpoint

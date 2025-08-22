@@ -10,3 +10,4 @@ c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net8.0\refint\TailoringApp.Domain.dll
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net8.0\TailoringApp.Domain.pdb
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net8.0\ref\TailoringApp.Domain.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net8.0\TailoringApp.Domain.sourcelink.json

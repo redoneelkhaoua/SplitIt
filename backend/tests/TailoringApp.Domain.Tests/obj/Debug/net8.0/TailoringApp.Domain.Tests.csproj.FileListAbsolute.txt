@@ -106,3 +106,4 @@ c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Domain.T
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Domain.Tests\obj\Debug\net8.0\TailoringApp.Domain.Tests.pdb
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Domain.Tests\obj\Debug\net8.0\TailoringApp.Domain.Tests.genruntimeconfig.cache
 c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Domain.Tests\obj\Debug\net8.0\ref\TailoringApp.Domain.Tests.dll
+c:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Domain.Tests\obj\Debug\net8.0\TailoringApp.Domain.Tests.sourcelink.json

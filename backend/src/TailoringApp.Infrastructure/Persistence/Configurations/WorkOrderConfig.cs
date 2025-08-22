@@ -29,5 +29,11 @@ public sealed class WorkOrderConfig : IEntityTypeConfiguration<WorkOrder>
                 m.Property(pp => pp.Currency).HasMaxLength(3).HasColumnName("UnitPriceCurrency");
             });
         });
+
+        b.OwnsOne(x => x.Discount, d =>
+        {
+            d.Property(p => p.Amount).HasColumnType("decimal(18,2)").HasColumnName("DiscountAmount");
+            d.Property(p => p.Currency).HasMaxLength(3).HasColumnName("DiscountCurrency");
+        });
     }
 }
