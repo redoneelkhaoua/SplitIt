@@ -8,10 +8,16 @@ using TailoringApp.Infrastructure.Persistence;
 using Microsoft.OpenApi.Models;
 using System.Security.Cryptography;
 using TailoringApp.Domain.Users;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(o =>
+    {
+        // Serialize enums as their string names (e.g., "Completed") instead of numeric values.
+        o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -44,15 +50,16 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// Apply migrations at startup (skip in Testing environment)
-if (!app.Environment.IsEnvironment("Testing"))
+// Apply migrations in normal environments; in Testing just ensure seed users exist
+using (var scope = app.Services.CreateScope())
 {
-    using var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetRequiredService<TailoringDbContext>();
-    db.Database.Migrate();
+    if (!app.Environment.IsEnvironment("Testing"))
+    {
+        db.Database.Migrate();
+    }
     if (!db.Users.Any())
     {
-        // simple SHA256 hash demo (not for production)
         string Hash(string input)
         {
             using var sha = SHA256.Create();

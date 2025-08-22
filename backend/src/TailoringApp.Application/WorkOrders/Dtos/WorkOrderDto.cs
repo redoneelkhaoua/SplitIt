@@ -8,7 +8,7 @@ public sealed record WorkOrderDto(
 	Guid CustomerId,
 	Guid? AppointmentId,
 	string Currency,
-	WorkOrderStatus Status,
+	string Status,
 	DateTime CreatedDate,
 	IReadOnlyList<WorkOrderItemDto> Items,
 	decimal Subtotal,

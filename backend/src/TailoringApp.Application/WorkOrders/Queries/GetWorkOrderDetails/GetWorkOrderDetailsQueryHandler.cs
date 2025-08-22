@@ -19,7 +19,7 @@ public sealed class GetWorkOrderDetailsQueryHandler : IRequestHandler<GetWorkOrd
             wo.CustomerId,
             wo.AppointmentId,
             wo.Currency,
-            wo.Status,
+            wo.Status.ToString(),
             wo.CreatedDate,
             wo.Items.Select(i => new WorkOrderItemDto(i.Description, i.Quantity, i.UnitPrice.Amount, i.UnitPrice.Currency)).ToList(),
             wo.Subtotal.Amount,

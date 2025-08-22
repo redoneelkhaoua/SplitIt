@@ -27,7 +27,11 @@ public static class DependencyInjection
 
         // Auth
         services.AddScoped<IAuthService, AuthService>();
-        var key = configuration["Jwt:Key"] ?? "dev_super_secret_key_change";
+        var key = configuration["Jwt:Key"] ?? "dev_super_secret_key_change_replace_me_with_longer_64b"; // fallback dev key (>=32 bytes)
+        if (Encoding.UTF8.GetBytes(key).Length < 32)
+        {
+            throw new InvalidOperationException("JWT signing key length insufficient. Provide Jwt:Key with at least 32 bytes.");
+        }
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(o =>
             {

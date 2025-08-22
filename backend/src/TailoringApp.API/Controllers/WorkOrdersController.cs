@@ -16,7 +16,6 @@ namespace TailoringApp.API.Controllers;
 
 [ApiController]
 [Route("api/customers/{customerId:guid}/workorders")]
-[AllowAnonymous] // MVP: open until test auth adaptation
 public sealed class WorkOrdersController : ControllerBase
 {
     private readonly ISender _sender;
@@ -43,9 +42,8 @@ public sealed class WorkOrdersController : ControllerBase
         [FromQuery] string? search = null,
         CancellationToken ct = default)
     {
-        var result = await _sender.Send(new GetCustomerWorkOrdersQuery(customerId, page, pageSize, sortBy, desc, status, fromUtc, toUtc, search), ct);
-    Response.Headers["X-Total-Count"] = result.TotalCount.ToString();
-    return Ok(result.Items);
+    var pageResult = await _sender.Send(new GetCustomerWorkOrdersQuery(customerId, page, pageSize, sortBy, desc, status, fromUtc, toUtc, search), ct);
+    return Ok(pageResult);
     }
 
     [HttpGet("{id:guid}")]

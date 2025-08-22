@@ -22,9 +22,6 @@ public class GetCustomersQueryHandler : IRequestHandler<GetCustomersQuery, GetCu
             c.Enabled
         )).ToList();
 
-    var totalPages = (int)Math.Ceiling(total / (double)request.PageSize);
-    var hasNext = request.Page < totalPages;
-    var hasPrevious = request.Page > 1 && totalPages > 0;
-    return new GetCustomersResult(dtos, total, request.Page, request.PageSize, totalPages, hasNext, hasPrevious);
+    return new GetCustomersResult(dtos, total, request.Page, request.PageSize);
     }
 }

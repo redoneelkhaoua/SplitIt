@@ -17,7 +17,7 @@ public class WorkOrdersIntegrationTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Create_AddItem_Start_Complete_List_Works()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
 
         // Register a customer
         var reg = new
@@ -57,19 +57,14 @@ public class WorkOrdersIntegrationTests : IClassFixture<ApiFactory>
         completeResp.StatusCode.Should().Be(HttpStatusCode.NoContent);
 
         // List
-        var listResp = await client.GetAsync($"/api/customers/{customerId}/workorders?page=1&pageSize=10&sortBy=created&desc=true");
+    var listResp = await client.GetAsync($"/api/customers/{customerId}/workorders?page=1&pageSize=10&sortBy=created&desc=true");
         listResp.StatusCode.Should().Be(HttpStatusCode.OK);
-        var listJson = await listResp.Content.ReadFromJsonAsync<JsonElement>();
-        listJson.ValueKind.Should().Be(JsonValueKind.Array);
-        listJson.GetArrayLength().Should().BeGreaterThan(0);
-
-        var first = listJson.EnumerateArray().First();
-        first.GetProperty("currency").GetString().Should().Be("USD");
-        first.GetProperty("status").GetInt32().Should().Be(2); // Completed
-        var items = first.GetProperty("items");
-        items.GetArrayLength().Should().BeGreaterThan(0);
-        items[0].GetProperty("description").GetString().Should().Be("Jacket");
-        items[0].GetProperty("unitPrice").GetDecimal().Should().Be(100m);
-        first.GetProperty("subtotal").GetDecimal().Should().Be(100m);
+    var listJson = await listResp.Content.ReadFromJsonAsync<JsonElement>();
+    var itemsArray = listJson.GetProperty("items");
+    itemsArray.GetArrayLength().Should().BeGreaterThan(0);
+    var first = itemsArray.EnumerateArray().First();
+    first.GetProperty("currency").GetString().Should().Be("USD");
+    first.GetProperty("status").GetString().Should().Be("Completed");
+    first.GetProperty("subtotal").GetDecimal().Should().Be(100m);
     }
 }

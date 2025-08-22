@@ -25,7 +25,7 @@ public class WorkOrdersDiscountNegativeIntegrationTests : IClassFixture<ApiFacto
     [Fact]
     public async Task Setting_Discount_With_Mismatched_Currency_Fails()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var (cid, wid) = await CreateWorkOrder(client);
         (await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/items", new { description = "Dress", quantity = 1, unitPrice = 80m, currency = "USD" })).StatusCode.Should().Be(HttpStatusCode.NoContent);
         var resp = await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/discount", new { amount = 10m, currency = "EUR" });
@@ -35,7 +35,7 @@ public class WorkOrdersDiscountNegativeIntegrationTests : IClassFixture<ApiFacto
     [Fact]
     public async Task Setting_Negative_Discount_Fails()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var (cid, wid) = await CreateWorkOrder(client);
         (await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/items", new { description = "Shirt", quantity = 2, unitPrice = 40m, currency = "USD" })).StatusCode.Should().Be(HttpStatusCode.NoContent);
         var resp = await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/discount", new { amount = -5m, currency = "USD" });
@@ -45,7 +45,7 @@ public class WorkOrdersDiscountNegativeIntegrationTests : IClassFixture<ApiFacto
     [Fact]
     public async Task Setting_Discount_Larger_Than_Subtotal_Is_Capped()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var (cid, wid) = await CreateWorkOrder(client);
         (await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/items", new { description = "Suit", quantity = 1, unitPrice = 120m, currency = "USD" })).StatusCode.Should().Be(HttpStatusCode.NoContent);
         (await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/discount", new { amount = 1000m, currency = "USD" })).StatusCode.Should().Be(HttpStatusCode.NoContent);
@@ -59,7 +59,7 @@ public class WorkOrdersDiscountNegativeIntegrationTests : IClassFixture<ApiFacto
     [Fact]
     public async Task Cannot_Set_Discount_On_Completed_WorkOrder()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var (cid, wid) = await CreateWorkOrder(client);
         (await client.PostAsJsonAsync($"/api/customers/{cid}/workorders/{wid}/items", new { description = "Vest", quantity = 1, unitPrice = 30m, currency = "USD" })).StatusCode.Should().Be(HttpStatusCode.NoContent);
         (await client.PostAsync($"/api/customers/{cid}/workorders/{wid}/start", null!)).StatusCode.Should().Be(HttpStatusCode.NoContent);

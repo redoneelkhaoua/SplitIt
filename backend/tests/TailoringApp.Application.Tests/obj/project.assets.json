@@ -1774,11 +1774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\TailoringApp.Application.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\TailoringApp.Application.Tests.csproj",
       "projectName": "TailoringApp.Application.Tests",
-      "projectPath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\TailoringApp.Application.Tests.csproj",
+      "projectPath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\TailoringApp.Application.Tests.csproj",
       "packagesPath": "C:\\Users\\Adelphatech\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\obj\\",
+      "outputPath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1800,11 +1800,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj": {
-              "projectPath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj"
+            "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj": {
+              "projectPath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj"
             },
-            "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj": {
-              "projectPath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj"
+            "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj": {
+              "projectPath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj"
             }
           }
         }

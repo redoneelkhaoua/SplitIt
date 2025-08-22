@@ -16,7 +16,7 @@ public class WorkOrdersDiscountIntegrationTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Set_And_Clear_Discount_Works()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var reg = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-DISC", FirstName = "D", LastName = "S", Email = "disc@test.com" });
         var cid = (await reg.Content.ReadFromJsonAsync<JsonElement>()).GetProperty("id").GetGuid();
         var wo = await client.PostAsJsonAsync($"/api/customers/{cid}/workorders", new { currency = "USD", appointmentId = (Guid?)null });

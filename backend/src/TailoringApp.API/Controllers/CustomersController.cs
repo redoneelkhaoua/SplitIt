@@ -20,7 +20,6 @@ namespace TailoringApp.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[AllowAnonymous] // MVP: open until test auth adaptation
 public class CustomersController : ControllerBase
 {
     private readonly ISender _sender;

@@ -16,7 +16,7 @@ public class WorkOrdersItemsIntegrationTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Update_And_Remove_Item_Works()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
 
         var reg = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-IT", FirstName = "I", LastName = "T", Email = "it@test.com" });
         var cid = (await reg.Content.ReadFromJsonAsync<JsonElement>()).GetProperty("id").GetGuid();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dO7x9nHf32B8j4SoB6Tn76MzgdxRwB+U80b8qx91Iit1HFLNizf3o88D8s7ec2Z9rUOg4A0M/Q6s975czh8bnQ==",
+  "dgSpecHash": "tFWJ6VmHVIb6oGFh0+zFYMKHI32dUNk1U0G/QskNe5Dal9Iw4/njWXDkjXC25QhsPBakrGorq3eZ9tGcF3XvRA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.API.Tests\\TailoringApp.API.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.API.Tests\\TailoringApp.API.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelphatech\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Adelphatech\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

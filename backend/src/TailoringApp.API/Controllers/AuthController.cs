@@ -13,6 +13,7 @@ public class AuthController : ControllerBase
     public sealed record LoginRequest(string Username, string Password);
 
     [HttpPost("login")]
+    [Microsoft.AspNetCore.Authorization.AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginRequest req, CancellationToken ct)
     {
         var user = await _auth.ValidateUserAsync(req.Username, req.Password, ct);

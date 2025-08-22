@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bLf4m3lEe0XyltyjhoZnVPjHGv1DJrXD0WWVGRaeUG1+u5GRo5582u3zikTqcr2zTZXHd8TiBdTI5KySs+MGAQ==",
+  "dgSpecHash": "pKaGZNOLqB9SKD48a6+6nwhiVrjnPgkLCnYS6TRasfxWCPDJGTQnOsiwg7rUQrHnI+WEP/NU+kfACiX3785ohg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Infrastructure\\TailoringApp.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Infrastructure\\TailoringApp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelphatech\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Adelphatech\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

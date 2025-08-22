@@ -21,7 +21,11 @@ public sealed class AuthService : IAuthService
     {
         _db = db;
         _config = config;
-        _jwtKey = _config["Jwt:Key"] ?? "dev_super_secret_key_change"; // dev fallback
+        _jwtKey = _config["Jwt:Key"] ?? "dev_super_secret_key_change_replace_me_with_longer_64b"; // dev fallback (>=32 bytes)
+        if (Encoding.UTF8.GetBytes(_jwtKey).Length < 32)
+        {
+            throw new InvalidOperationException("JWT signing key length insufficient. Provide Jwt:Key with at least 32 bytes.");
+        }
     }
 
     public async Task<User?> ValidateUserAsync(string username, string password, CancellationToken ct)

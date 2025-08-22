@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vgyJwOGojGJqkMlZd/6Y/0hb540+LAcbgKF6rzhtmRiaZzIIV7l8b7n+zI/EADC38QkGVVgYy9LDai1EKNFoDg==",
+  "dgSpecHash": "UgQ8uRMS7P32fhKsnIlwi4glsgnVXnl0c3Pylyl9KdfYyIaBiyse8r5zouIjuP37pJDifdGEGN0NuNaKq+6nZw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\TailoringApp.Application.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Application.Tests\\TailoringApp.Application.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",

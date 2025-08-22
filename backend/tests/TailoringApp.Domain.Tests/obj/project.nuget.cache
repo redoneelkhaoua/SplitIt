@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fcabxKBDi0K8fCR9j5UePZzqLVMFK9VNiLhr57QVGcbloQL2o6iy6bXH4211hmMAcY1or91fEcCyX+9m8xN99w==",
+  "dgSpecHash": "amSwzkKVRsLuLyR0tfYrXCOxwlb8JI3WacxW8K3RUJrzZH4PE3BknDR25Qr4CBVIRL4p9yWa9GRJGbbSYQAcCw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Domain.Tests\\TailoringApp.Domain.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\tests\\TailoringApp.Domain.Tests\\TailoringApp.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",

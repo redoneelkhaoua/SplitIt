@@ -16,7 +16,7 @@ public class WorkOrdersInvalidTransitionTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Start_WhenNotDraft_ReturnsBadRequest()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var reg = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-TX", FirstName = "AA", LastName = "BB", Email = "tx@test.com" });
         var cid = (await reg.Content.ReadFromJsonAsync<JsonElement>()).GetProperty("id").GetGuid();
         var wo = await client.PostAsJsonAsync($"/api/customers/{cid}/workorders", new { currency = "USD", appointmentId = (Guid?)null });
@@ -31,7 +31,7 @@ public class WorkOrdersInvalidTransitionTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Complete_WhenNotInProgress_ReturnsBadRequest()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var reg = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-TY", FirstName = "CC", LastName = "DD", Email = "ty@test.com" });
         var cid = (await reg.Content.ReadFromJsonAsync<JsonElement>()).GetProperty("id").GetGuid();
         var wo = await client.PostAsJsonAsync($"/api/customers/{cid}/workorders", new { currency = "USD", appointmentId = (Guid?)null });

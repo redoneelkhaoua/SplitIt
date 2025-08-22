@@ -13,4 +13,4 @@ public sealed record GetCustomerWorkOrdersQuery(
     DateTime? FromUtc = null,
     DateTime? ToUtc = null,
     string? Search = null
-) : IRequest<(IReadOnlyList<WorkOrderDto> Items, int TotalCount)>;
+) : IRequest<WorkOrdersPageResult>;

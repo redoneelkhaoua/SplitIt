@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="73bf4532-21e2-4b0d-9b72-29da1623ad20" name="Adelphatech@REDONEELKHAOUA 2025-08-22 13:39:07" runUser="REDONEELKHAOUA\Adelphatech" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-08-22T13:39:07.9899971+01:00" queuing="2025-08-22T13:39:07.9899975+01:00" start="2025-08-22T13:39:02.1303597+01:00" finish="2025-08-22T13:39:08.5128792+01:00" />
+  <TestSettings name="default" id="011c6b83-ca56-4b33-8ee8-2a4906552e45">
+    <Deployment runDeploymentRoot="Adelphatech_REDONEELKHAOUA_2025-08-22_13_39_07" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="98724817-b26e-42fa-a329-ce6b2a3ecbb8" testId="a23c3278-588a-deea-3281-6d2d781878a9" testName="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Setting_Discount_Larger_Than_Subtotal_Is_Capped" computerName="REDONEELKHAOUA" duration="00:00:00.0541011" startTime="2025-08-22T13:39:08.2542114+01:00" endTime="2025-08-22T13:39:08.2542118+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98724817-b26e-42fa-a329-ce6b2a3ecbb8" />
+    <UnitTestResult executionId="562c6b34-c2d2-4b39-af83-84be29cbc643" testId="3868d15c-51dc-fc84-7c21-50fedeeb311c" testName="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Setting_Negative_Discount_Fails" computerName="REDONEELKHAOUA" duration="00:00:04.3801521" startTime="2025-08-22T13:39:08.1985734+01:00" endTime="2025-08-22T13:39:08.1985742+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="562c6b34-c2d2-4b39-af83-84be29cbc643" />
+    <UnitTestResult executionId="84dab11d-91d7-41e3-83d9-afe4bc398f6f" testId="a71e90c9-c66b-27a2-e703-6bc181ca9278" testName="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Cannot_Set_Discount_On_Completed_WorkOrder" computerName="REDONEELKHAOUA" duration="00:00:00.0781223" startTime="2025-08-22T13:39:08.3332955+01:00" endTime="2025-08-22T13:39:08.3332960+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="84dab11d-91d7-41e3-83d9-afe4bc398f6f" />
+    <UnitTestResult executionId="1f8a118a-0b44-4c29-8254-5928d588888d" testId="d11ed83a-8444-4c78-0b53-e306f201dede" testName="TailoringApp.API.Tests.WorkOrdersInvalidTransitionTests.Start_WhenNotDraft_ReturnsBadRequest" computerName="REDONEELKHAOUA" duration="00:00:04.1459212" startTime="2025-08-22T13:39:07.9652873+01:00" endTime="2025-08-22T13:39:07.9652877+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1f8a118a-0b44-4c29-8254-5928d588888d" />
+    <UnitTestResult executionId="3ccdbcd7-f867-48dc-a47b-5d3bc6577943" testId="863a39a7-705b-154d-b496-e14b965424c5" testName="TailoringApp.API.Tests.CustomersAppointmentsIntegrationTests.Register_Schedule_GetAppointments_Flow_Works" computerName="REDONEELKHAOUA" duration="00:00:04.1676677" startTime="2025-08-22T13:39:08.0134948+01:00" endTime="2025-08-22T13:39:08.0134952+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ccdbcd7-f867-48dc-a47b-5d3bc6577943" />
+    <UnitTestResult executionId="36c00c1c-b431-489d-a1f1-4b230f3f4b39" testId="9b1c57fe-f6df-5b54-adec-ca454ff964b9" testName="TailoringApp.API.Tests.WorkOrdersItemsIntegrationTests.Update_And_Remove_Item_Works" computerName="REDONEELKHAOUA" duration="00:00:04.3809628" startTime="2025-08-22T13:39:08.1992083+01:00" endTime="2025-08-22T13:39:08.1992088+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36c00c1c-b431-489d-a1f1-4b230f3f4b39" />
+    <UnitTestResult executionId="a366a9b5-b817-4184-813c-423fb3a46dd2" testId="48e90773-463d-aac9-6644-d25800c13b1d" testName="TailoringApp.API.Tests.WorkOrdersIntegrationTests.Create_AddItem_Start_Complete_List_Works" computerName="REDONEELKHAOUA" duration="00:00:04.3822913" startTime="2025-08-22T13:39:08.2448037+01:00" endTime="2025-08-22T13:39:08.2448045+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a366a9b5-b817-4184-813c-423fb3a46dd2">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : The requested operation requires an element of type 'Number', but the target element has type 'String'.</Message>
+          <StackTrace>   at System.Text.Json.ThrowHelper.ThrowJsonElementWrongTypeException(JsonTokenType expectedType, JsonTokenType actualType)&#xD;
+   at System.Text.Json.JsonDocument.TryGetValue(Int32 index, Int32&amp; value)&#xD;
+   at System.Text.Json.JsonElement.GetInt32()&#xD;
+   at TailoringApp.API.Tests.WorkOrdersIntegrationTests.Create_AddItem_Start_Complete_List_Works() in C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\WorkOrdersIntegrationTests.cs:line 67&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a40ea861-4c4f-4394-976d-6f799d85077b" testId="ef7dff69-e7cf-a784-e170-074e93fb039f" testName="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Setting_Discount_With_Mismatched_Currency_Fails" computerName="REDONEELKHAOUA" duration="00:00:00.0276129" startTime="2025-08-22T13:39:08.3632799+01:00" endTime="2025-08-22T13:39:08.3632806+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a40ea861-4c4f-4394-976d-6f799d85077b" />
+    <UnitTestResult executionId="c37c6fd1-1e42-4367-98a2-b37f6324c8ab" testId="87d562cf-f6d2-c2bc-707f-658c2c8e97d2" testName="TailoringApp.API.Tests.WorkOrdersNegativeIntegrationTests.Create_WithForeignAppointment_ReturnsBadRequest" computerName="REDONEELKHAOUA" duration="00:00:04.0894052" startTime="2025-08-22T13:39:07.9239886+01:00" endTime="2025-08-22T13:39:07.9240290+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c37c6fd1-1e42-4367-98a2-b37f6324c8ab" />
+    <UnitTestResult executionId="8f0d5683-379e-485c-8e9d-cf5f8946552d" testId="b41c9f2d-4a25-66a4-833e-a49df000b150" testName="TailoringApp.API.Tests.WorkOrdersDiscountIntegrationTests.Set_And_Clear_Discount_Works" computerName="REDONEELKHAOUA" duration="00:00:04.3815849" startTime="2025-08-22T13:39:08.1995014+01:00" endTime="2025-08-22T13:39:08.1995017+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f0d5683-379e-485c-8e9d-cf5f8946552d" />
+    <UnitTestResult executionId="bdcda294-204c-4513-b0b1-badbc1f4b940" testId="5b31edf6-8848-74d2-f600-f8e7d646c452" testName="TailoringApp.API.Tests.WorkOrdersInvalidTransitionTests.Complete_WhenNotInProgress_ReturnsBadRequest" computerName="REDONEELKHAOUA" duration="00:00:00.0738704" startTime="2025-08-22T13:39:08.0414841+01:00" endTime="2025-08-22T13:39:08.0414846+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bdcda294-204c-4513-b0b1-badbc1f4b940" />
+    <UnitTestResult executionId="fa0d1453-6d0a-46c8-8234-8a50d53eb349" testId="c383f6b9-13a7-9147-5afb-b801c19ff5a2" testName="TailoringApp.API.Tests.WorkOrdersNegativeIntegrationTests.AddItem_CurrencyMismatch_ReturnsBadRequest" computerName="REDONEELKHAOUA" duration="00:00:00.0555507" startTime="2025-08-22T13:39:07.9913901+01:00" endTime="2025-08-22T13:39:07.9913905+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa0d1453-6d0a-46c8-8234-8a50d53eb349" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersIntegrationTests.Create_AddItem_Start_Complete_List_Works" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="48e90773-463d-aac9-6644-d25800c13b1d">
+      <Execution id="a366a9b5-b817-4184-813c-423fb3a46dd2" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersIntegrationTests" name="Create_AddItem_Start_Complete_List_Works" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersInvalidTransitionTests.Complete_WhenNotInProgress_ReturnsBadRequest" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="5b31edf6-8848-74d2-f600-f8e7d646c452">
+      <Execution id="bdcda294-204c-4513-b0b1-badbc1f4b940" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersInvalidTransitionTests" name="Complete_WhenNotInProgress_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersInvalidTransitionTests.Start_WhenNotDraft_ReturnsBadRequest" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="d11ed83a-8444-4c78-0b53-e306f201dede">
+      <Execution id="1f8a118a-0b44-4c29-8254-5928d588888d" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersInvalidTransitionTests" name="Start_WhenNotDraft_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Setting_Negative_Discount_Fails" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="3868d15c-51dc-fc84-7c21-50fedeeb311c">
+      <Execution id="562c6b34-c2d2-4b39-af83-84be29cbc643" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests" name="Setting_Negative_Discount_Fails" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersNegativeIntegrationTests.Create_WithForeignAppointment_ReturnsBadRequest" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="87d562cf-f6d2-c2bc-707f-658c2c8e97d2">
+      <Execution id="c37c6fd1-1e42-4367-98a2-b37f6324c8ab" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersNegativeIntegrationTests" name="Create_WithForeignAppointment_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Cannot_Set_Discount_On_Completed_WorkOrder" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="a71e90c9-c66b-27a2-e703-6bc181ca9278">
+      <Execution id="84dab11d-91d7-41e3-83d9-afe4bc398f6f" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests" name="Cannot_Set_Discount_On_Completed_WorkOrder" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersNegativeIntegrationTests.AddItem_CurrencyMismatch_ReturnsBadRequest" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="c383f6b9-13a7-9147-5afb-b801c19ff5a2">
+      <Execution id="fa0d1453-6d0a-46c8-8234-8a50d53eb349" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersNegativeIntegrationTests" name="AddItem_CurrencyMismatch_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Setting_Discount_With_Mismatched_Currency_Fails" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="ef7dff69-e7cf-a784-e170-074e93fb039f">
+      <Execution id="a40ea861-4c4f-4394-976d-6f799d85077b" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests" name="Setting_Discount_With_Mismatched_Currency_Fails" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests.Setting_Discount_Larger_Than_Subtotal_Is_Capped" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="a23c3278-588a-deea-3281-6d2d781878a9">
+      <Execution id="98724817-b26e-42fa-a329-ce6b2a3ecbb8" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersDiscountNegativeIntegrationTests" name="Setting_Discount_Larger_Than_Subtotal_Is_Capped" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersDiscountIntegrationTests.Set_And_Clear_Discount_Works" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="b41c9f2d-4a25-66a4-833e-a49df000b150">
+      <Execution id="8f0d5683-379e-485c-8e9d-cf5f8946552d" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersDiscountIntegrationTests" name="Set_And_Clear_Discount_Works" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.WorkOrdersItemsIntegrationTests.Update_And_Remove_Item_Works" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="9b1c57fe-f6df-5b54-adec-ca454ff964b9">
+      <Execution id="36c00c1c-b431-489d-a1f1-4b230f3f4b39" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.WorkOrdersItemsIntegrationTests" name="Update_And_Remove_Item_Works" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.API.Tests.CustomersAppointmentsIntegrationTests.Register_Schedule_GetAppointments_Flow_Works" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.api.tests\bin\debug\net8.0\tailoringapp.api.tests.dll" id="863a39a7-705b-154d-b496-e14b965424c5">
+      <Execution id="3ccdbcd7-f867-48dc-a47b-5d3bc6577943" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\bin\Debug\net8.0\TailoringApp.API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.API.Tests.CustomersAppointmentsIntegrationTests" name="Register_Schedule_GetAppointments_Flow_Works" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a23c3278-588a-deea-3281-6d2d781878a9" executionId="98724817-b26e-42fa-a329-ce6b2a3ecbb8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3868d15c-51dc-fc84-7c21-50fedeeb311c" executionId="562c6b34-c2d2-4b39-af83-84be29cbc643" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a71e90c9-c66b-27a2-e703-6bc181ca9278" executionId="84dab11d-91d7-41e3-83d9-afe4bc398f6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d11ed83a-8444-4c78-0b53-e306f201dede" executionId="1f8a118a-0b44-4c29-8254-5928d588888d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="863a39a7-705b-154d-b496-e14b965424c5" executionId="3ccdbcd7-f867-48dc-a47b-5d3bc6577943" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b1c57fe-f6df-5b54-adec-ca454ff964b9" executionId="36c00c1c-b431-489d-a1f1-4b230f3f4b39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48e90773-463d-aac9-6644-d25800c13b1d" executionId="a366a9b5-b817-4184-813c-423fb3a46dd2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef7dff69-e7cf-a784-e170-074e93fb039f" executionId="a40ea861-4c4f-4394-976d-6f799d85077b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="87d562cf-f6d2-c2bc-707f-658c2c8e97d2" executionId="c37c6fd1-1e42-4367-98a2-b37f6324c8ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b41c9f2d-4a25-66a4-833e-a49df000b150" executionId="8f0d5683-379e-485c-8e9d-cf5f8946552d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b31edf6-8848-74d2-f600-f8e7d646c452" executionId="bdcda294-204c-4513-b0b1-badbc1f4b940" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c383f6b9-13a7-9147-5afb-b801c19ff5a2" executionId="fa0d1453-6d0a-46c8-8234-8a50d53eb349" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="12" executed="12" passed="11" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.1+ce9211e970 (64-bit .NET 8.0.11)&#xD;
+[xUnit.net 00:00:00.29]   Discovering: TailoringApp.API.Tests&#xD;
+[xUnit.net 00:00:00.43]   Discovered:  TailoringApp.API.Tests&#xD;
+[xUnit.net 00:00:00.43]   Starting:    TailoringApp.API.Tests&#xD;
+[xUnit.net 00:00:04.96]       System.InvalidOperationException : The requested operation requires an element of type 'Number', but the target element has type 'String'.&#xD;
+[xUnit.net 00:00:04.96]       Stack Trace:&#xD;
+[xUnit.net 00:00:04.96]            at System.Text.Json.ThrowHelper.ThrowJsonElementWrongTypeException(JsonTokenType expectedType, JsonTokenType actualType)&#xD;
+[xUnit.net 00:00:04.96]            at System.Text.Json.JsonDocument.TryGetValue(Int32 index, Int32&amp; value)&#xD;
+[xUnit.net 00:00:04.96]            at System.Text.Json.JsonElement.GetInt32()&#xD;
+[xUnit.net 00:00:04.96]         C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.API.Tests\WorkOrdersIntegrationTests.cs(67,0): at TailoringApp.API.Tests.WorkOrdersIntegrationTests.Create_AddItem_Start_Complete_List_Works()&#xD;
+[xUnit.net 00:00:04.96]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:05.09]   Finished:    TailoringApp.API.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="REDONEELKHAOUA" outcome="Error" timestamp="2025-08-22T13:39:08.2373870+01:00">
+        <Text>[xUnit.net 00:00:04.96]     TailoringApp.API.Tests.WorkOrdersIntegrationTests.Create_AddItem_Start_Complete_List_Works [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

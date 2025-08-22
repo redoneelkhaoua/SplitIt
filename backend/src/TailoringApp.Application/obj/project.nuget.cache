@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q8C9q3xWJJy2DCS87Fgq5q5ZL7TMb8Kd8uaGKDUaZnTYNEN99yQc4RA1tc0yd64Ha9NrKK0wGJ4BBNpKUOjv1g==",
+  "dgSpecHash": "p8ggY/wTK/JC5STpqqPa5q6Ak3g6TPv7MTA8ow/6ak9rGQQqPDYb7JE9EvOzJNJQY9yJGllaaIttg9IZmcRVlA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj",
+  "projectFilePath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Application\\TailoringApp.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\Adelphatech\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="27fdfc6d-f7fa-491c-929b-553f54d31f21" name="Adelphatech@REDONEELKHAOUA 2025-08-22 13:39:04" runUser="REDONEELKHAOUA\Adelphatech" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-08-22T13:39:04.1168753+01:00" queuing="2025-08-22T13:39:04.1168757+01:00" start="2025-08-22T13:39:02.1311389+01:00" finish="2025-08-22T13:39:04.2548661+01:00" />
+  <TestSettings name="default" id="c59e3ba4-0b06-4b9c-949b-7c0fb6f20325">
+    <Deployment runDeploymentRoot="Adelphatech_REDONEELKHAOUA_2025-08-22_13_39_04" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6436cd54-58f8-49e8-844e-0259ba4b5982" testId="641ac209-5ed9-aa0f-c52d-0a69ea8302c7" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Cancel_Should_Succeed_When_OwnerMatches" computerName="REDONEELKHAOUA" duration="00:00:00.0116990" startTime="2025-08-22T13:39:04.0239965+01:00" endTime="2025-08-22T13:39:04.0239967+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6436cd54-58f8-49e8-844e-0259ba4b5982" />
+    <UnitTestResult executionId="6f450d30-583e-416e-b523-08df983fd0d4" testId="42510ab1-9bd3-330c-a786-500013f59ea4" testName="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.DeleteCustomer_Should_SoftDelete_And_ReturnTrue" computerName="REDONEELKHAOUA" duration="00:00:00.0516756" startTime="2025-08-22T13:39:03.8823571+01:00" endTime="2025-08-22T13:39:03.8823574+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f450d30-583e-416e-b523-08df983fd0d4" />
+    <UnitTestResult executionId="2730c21d-855f-477f-952e-1dc256f0068d" testId="a1312d47-569a-22f6-b54a-cf58fb88fd1f" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Reschedule_Should_Move_When_NoConflict_And_OwnedByCustomer" computerName="REDONEELKHAOUA" duration="00:00:00.0114000" startTime="2025-08-22T13:39:03.8851722+01:00" endTime="2025-08-22T13:39:03.8851725+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2730c21d-855f-477f-952e-1dc256f0068d" />
+    <UnitTestResult executionId="6508f35d-b475-4da1-9bba-6b268202a103" testId="b4ec269f-4efe-2486-3d04-e33767754e08" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Reschedule_Should_Fail_When_Conflict" computerName="REDONEELKHAOUA" duration="00:00:00.0018793" startTime="2025-08-22T13:39:03.8867560+01:00" endTime="2025-08-22T13:39:03.8867571+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6508f35d-b475-4da1-9bba-6b268202a103" />
+    <UnitTestResult executionId="bbcb7636-6f15-4c9a-8814-05aabc7bda93" testId="d38b2ab6-0b66-77f0-aeee-195a035438ac" testName="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.UpdateCustomer_Should_ReturnFalse_When_NotFound" computerName="REDONEELKHAOUA" duration="00:00:00.0024872" startTime="2025-08-22T13:39:03.8987031+01:00" endTime="2025-08-22T13:39:03.8987035+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbcb7636-6f15-4c9a-8814-05aabc7bda93" />
+    <UnitTestResult executionId="b49710af-371d-48b4-97a6-a074cb00611a" testId="416e1d25-15e4-c330-c9e7-028e4361b6c6" testName="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.RestoreCustomer_Should_Restore_And_ReturnTrue" computerName="REDONEELKHAOUA" duration="00:00:00.0049029" startTime="2025-08-22T13:39:03.8959450+01:00" endTime="2025-08-22T13:39:03.8959458+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b49710af-371d-48b4-97a6-a074cb00611a" />
+    <UnitTestResult executionId="7f685f6a-7b15-4861-82b0-2ee92ebd348d" testId="e970d83d-355e-f084-ebfd-b77e72367707" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Complete_Should_Succeed_When_OwnerMatches_And_Scheduled" computerName="REDONEELKHAOUA" duration="00:00:00.0516709" startTime="2025-08-22T13:39:03.8741711+01:00" endTime="2025-08-22T13:39:03.8742210+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f685f6a-7b15-4861-82b0-2ee92ebd348d" />
+    <UnitTestResult executionId="f56cd59c-ea98-4e59-be9e-257f746201b1" testId="b440f6be-882c-7974-b94a-a9721924c435" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Schedule_Should_ReturnEmpty_When_Conflicts" computerName="REDONEELKHAOUA" duration="00:00:00.0094583" startTime="2025-08-22T13:39:03.8963780+01:00" endTime="2025-08-22T13:39:03.8963782+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f56cd59c-ea98-4e59-be9e-257f746201b1" />
+    <UnitTestResult executionId="a1c3d09f-42d0-490f-bcef-fdd75ed7aa95" testId="66cc2506-27f0-d413-bdfe-4e5bdb77a3a3" testName="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.DeleteCustomer_Should_ReturnFalse_When_NotFound" computerName="REDONEELKHAOUA" duration="00:00:00.0013163" startTime="2025-08-22T13:39:04.0237458+01:00" endTime="2025-08-22T13:39:04.0237460+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1c3d09f-42d0-490f-bcef-fdd75ed7aa95" />
+    <UnitTestResult executionId="def59cb2-0e65-4b44-b750-280a21e6d2bc" testId="18f3b6d7-7b04-6852-9c5b-a8535ad81fcc" testName="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.UpdateCustomer_Should_Update_Fields_And_ReturnTrue" computerName="REDONEELKHAOUA" duration="00:00:00.0171674" startTime="2025-08-22T13:39:03.8905171+01:00" endTime="2025-08-22T13:39:03.8905174+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="def59cb2-0e65-4b44-b750-280a21e6d2bc" />
+    <UnitTestResult executionId="648681ac-b139-46fb-b0d7-c51b59a0681e" testId="d77f1e66-966f-cbe3-7215-7dc36d12bdfd" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Schedule_Should_Create_When_NoConflict_And_CustomerExists" computerName="REDONEELKHAOUA" duration="00:00:00.0027297" startTime="2025-08-22T13:39:04.0233970+01:00" endTime="2025-08-22T13:39:04.0233971+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="648681ac-b139-46fb-b0d7-c51b59a0681e" />
+    <UnitTestResult executionId="1ded4b5d-a876-4d77-8dd3-f1fe60849c56" testId="068815e2-c0d9-b8b8-9d18-3419082fedfa" testName="TailoringApp.Application.Tests.AppointmentsHandlersTests.Schedule_Should_ReturnEmpty_When_CustomerMissing" computerName="REDONEELKHAOUA" duration="00:00:00.0012972" startTime="2025-08-22T13:39:04.0238085+01:00" endTime="2025-08-22T13:39:04.0238087+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ded4b5d-a876-4d77-8dd3-f1fe60849c56" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Schedule_Should_ReturnEmpty_When_Conflicts" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="b440f6be-882c-7974-b94a-a9721924c435">
+      <Execution id="f56cd59c-ea98-4e59-be9e-257f746201b1" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Schedule_Should_ReturnEmpty_When_Conflicts" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.RestoreCustomer_Should_Restore_And_ReturnTrue" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="416e1d25-15e4-c330-c9e7-028e4361b6c6">
+      <Execution id="b49710af-371d-48b4-97a6-a074cb00611a" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests" name="RestoreCustomer_Should_Restore_And_ReturnTrue" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Schedule_Should_ReturnEmpty_When_CustomerMissing" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="068815e2-c0d9-b8b8-9d18-3419082fedfa">
+      <Execution id="1ded4b5d-a876-4d77-8dd3-f1fe60849c56" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Schedule_Should_ReturnEmpty_When_CustomerMissing" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.UpdateCustomer_Should_Update_Fields_And_ReturnTrue" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="18f3b6d7-7b04-6852-9c5b-a8535ad81fcc">
+      <Execution id="def59cb2-0e65-4b44-b750-280a21e6d2bc" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests" name="UpdateCustomer_Should_Update_Fields_And_ReturnTrue" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Reschedule_Should_Fail_When_Conflict" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="b4ec269f-4efe-2486-3d04-e33767754e08">
+      <Execution id="6508f35d-b475-4da1-9bba-6b268202a103" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Reschedule_Should_Fail_When_Conflict" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Complete_Should_Succeed_When_OwnerMatches_And_Scheduled" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="e970d83d-355e-f084-ebfd-b77e72367707">
+      <Execution id="7f685f6a-7b15-4861-82b0-2ee92ebd348d" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Complete_Should_Succeed_When_OwnerMatches_And_Scheduled" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Reschedule_Should_Move_When_NoConflict_And_OwnedByCustomer" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="a1312d47-569a-22f6-b54a-cf58fb88fd1f">
+      <Execution id="2730c21d-855f-477f-952e-1dc256f0068d" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Reschedule_Should_Move_When_NoConflict_And_OwnedByCustomer" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Schedule_Should_Create_When_NoConflict_And_CustomerExists" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="d77f1e66-966f-cbe3-7215-7dc36d12bdfd">
+      <Execution id="648681ac-b139-46fb-b0d7-c51b59a0681e" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Schedule_Should_Create_When_NoConflict_And_CustomerExists" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.DeleteCustomer_Should_ReturnFalse_When_NotFound" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="66cc2506-27f0-d413-bdfe-4e5bdb77a3a3">
+      <Execution id="a1c3d09f-42d0-490f-bcef-fdd75ed7aa95" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests" name="DeleteCustomer_Should_ReturnFalse_When_NotFound" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.DeleteCustomer_Should_SoftDelete_And_ReturnTrue" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="42510ab1-9bd3-330c-a786-500013f59ea4">
+      <Execution id="6f450d30-583e-416e-b523-08df983fd0d4" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests" name="DeleteCustomer_Should_SoftDelete_And_ReturnTrue" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.AppointmentsHandlersTests.Cancel_Should_Succeed_When_OwnerMatches" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="641ac209-5ed9-aa0f-c52d-0a69ea8302c7">
+      <Execution id="6436cd54-58f8-49e8-844e-0259ba4b5982" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.AppointmentsHandlersTests" name="Cancel_Should_Succeed_When_OwnerMatches" />
+    </UnitTest>
+    <UnitTest name="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests.UpdateCustomer_Should_ReturnFalse_When_NotFound" storage="c:\users\adelphatech\documents\repos\splitit\backend\tests\tailoringapp.application.tests\bin\debug\net8.0\tailoringapp.application.tests.dll" id="d38b2ab6-0b66-77f0-aeee-195a035438ac">
+      <Execution id="bbcb7636-6f15-4c9a-8814-05aabc7bda93" />
+      <TestMethod codeBase="C:\Users\Adelphatech\Documents\repos\SplitIt\backend\tests\TailoringApp.Application.Tests\bin\Debug\net8.0\TailoringApp.Application.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TailoringApp.Application.Tests.UpdateDeleteRestoreHandlersTests" name="UpdateCustomer_Should_ReturnFalse_When_NotFound" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="641ac209-5ed9-aa0f-c52d-0a69ea8302c7" executionId="6436cd54-58f8-49e8-844e-0259ba4b5982" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="42510ab1-9bd3-330c-a786-500013f59ea4" executionId="6f450d30-583e-416e-b523-08df983fd0d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a1312d47-569a-22f6-b54a-cf58fb88fd1f" executionId="2730c21d-855f-477f-952e-1dc256f0068d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4ec269f-4efe-2486-3d04-e33767754e08" executionId="6508f35d-b475-4da1-9bba-6b268202a103" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d38b2ab6-0b66-77f0-aeee-195a035438ac" executionId="bbcb7636-6f15-4c9a-8814-05aabc7bda93" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="416e1d25-15e4-c330-c9e7-028e4361b6c6" executionId="b49710af-371d-48b4-97a6-a074cb00611a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e970d83d-355e-f084-ebfd-b77e72367707" executionId="7f685f6a-7b15-4861-82b0-2ee92ebd348d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b440f6be-882c-7974-b94a-a9721924c435" executionId="f56cd59c-ea98-4e59-be9e-257f746201b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66cc2506-27f0-d413-bdfe-4e5bdb77a3a3" executionId="a1c3d09f-42d0-490f-bcef-fdd75ed7aa95" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18f3b6d7-7b04-6852-9c5b-a8535ad81fcc" executionId="def59cb2-0e65-4b44-b750-280a21e6d2bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d77f1e66-966f-cbe3-7215-7dc36d12bdfd" executionId="648681ac-b139-46fb-b0d7-c51b59a0681e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="068815e2-c0d9-b8b8-9d18-3419082fedfa" executionId="1ded4b5d-a876-4d77-8dd3-f1fe60849c56" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="12" executed="12" passed="12" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.1+ce9211e970 (64-bit .NET 8.0.11)&#xD;
+[xUnit.net 00:00:00.25]   Discovering: TailoringApp.Application.Tests&#xD;
+[xUnit.net 00:00:00.38]   Discovered:  TailoringApp.Application.Tests&#xD;
+[xUnit.net 00:00:00.39]   Starting:    TailoringApp.Application.Tests&#xD;
+[xUnit.net 00:00:00.72]   Finished:    TailoringApp.Application.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

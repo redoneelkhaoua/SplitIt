@@ -21,7 +21,7 @@ public class CustomersAppointmentsIntegrationTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Register_Schedule_GetAppointments_Flow_Works()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
 
         var reg = new
         {
@@ -64,6 +64,16 @@ public class CustomersAppointmentsIntegrationTests : IClassFixture<ApiFactory>
 
 public class ApiFactory : WebApplicationFactory<Program>
 {
+    public async Task<HttpClient> CreateAuthenticatedClientAsync(string username = "admin", string password = "admin123")
+    {
+        var client = CreateClient();
+        var resp = await client.PostAsJsonAsync("/api/auth/login", new { username, password });
+        resp.EnsureSuccessStatusCode();
+        var json = await resp.Content.ReadFromJsonAsync<System.Text.Json.JsonElement>();
+        var token = json.GetProperty("token").GetString();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+        return client;
+    }
     protected override IHost CreateHost(IHostBuilder builder)
     {
         builder.UseEnvironment("Testing");

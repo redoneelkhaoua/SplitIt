@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TailoringApp.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b838de4f3253964df51cd8287018172df762747")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4e88cdfa224c3fbf4fdd156e63e49a44de5027b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TailoringApp.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TailoringApp.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

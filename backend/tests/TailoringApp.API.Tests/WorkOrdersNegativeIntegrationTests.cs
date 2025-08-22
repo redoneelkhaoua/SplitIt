@@ -16,7 +16,7 @@ public class WorkOrdersNegativeIntegrationTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task Create_WithForeignAppointment_ReturnsBadRequest()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         // Create two customers
         var c1 = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-N1", FirstName = "A", LastName = "B", Email = "n1@test.com" });
         var c2 = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-N2", FirstName = "C", LastName = "D", Email = "n2@test.com" });
@@ -37,7 +37,7 @@ public class WorkOrdersNegativeIntegrationTests : IClassFixture<ApiFactory>
     [Fact]
     public async Task AddItem_CurrencyMismatch_ReturnsBadRequest()
     {
-        var client = _factory.CreateClient();
+    var client = await _factory.CreateAuthenticatedClientAsync();
         var reg = await client.PostAsJsonAsync("/api/customers", new { CustomerNumber = "WO-N3", FirstName = "E", LastName = "F", Email = "n3@test.com" });
         var cid = (await reg.Content.ReadFromJsonAsync<JsonElement>()).GetProperty("id").GetGuid();
         var wo = await client.PostAsJsonAsync($"/api/customers/{cid}/workorders", new { currency = "USD", appointmentId = (Guid?)null });

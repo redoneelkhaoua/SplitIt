@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ekMX0u2CWvajkl1Wlb4+HLMNwKsdIWqKAKXXKz3reA2S3uCM1v/FKlbgmQuGOYQjQn/3hJj0sPidrti9Ad6hIw==",
+  "dgSpecHash": "CgCYlZFNc6BmovXQTL4JA9y6DA7ihu6GDqsehWi/LgmH+zZe6Sueobj4p2yH0xsw3I6pZFP2+dKP2JmZLd6nHw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Adelphatech\\Documents\\repos\\SplitIt\\backend\\src\\TailoringApp.Domain\\TailoringApp.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Adelphatech\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
