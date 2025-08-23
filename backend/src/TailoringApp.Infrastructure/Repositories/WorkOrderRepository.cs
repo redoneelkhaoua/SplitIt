@@ -53,8 +53,50 @@ public sealed class WorkOrderRepository : IWorkOrderRepository
             _ => query.OrderByDescending(x => x.CreatedDate)
         };
 
-    var total = await query.CountAsync(ct);
-    var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+        var total = await query.CountAsync(ct);
+        var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
+        return (items, total);
+    }
+
+    public async Task<(IReadOnlyList<WorkOrder> Items, int TotalCount)> GetAllAsync(int page, int pageSize, string? sortBy, bool desc, string? status, Guid? customerId, DateTime? fromUtc, DateTime? toUtc, string? search, CancellationToken ct)
+    {
+        var query = _db.Set<WorkOrder>().AsNoTracking().Include(x => x.Items)
+            .Where(x => x.Enabled);
+
+        if (customerId.HasValue)
+        {
+            query = query.Where(x => x.CustomerId == customerId.Value);
+        }
+
+        if (!string.IsNullOrWhiteSpace(status) && Enum.TryParse<WorkOrderStatus>(status, true, out var st))
+        {
+            query = query.Where(x => x.Status == st);
+        }
+        if (fromUtc.HasValue)
+        {
+            query = query.Where(x => x.CreatedDate >= fromUtc.Value);
+        }
+        if (toUtc.HasValue)
+        {
+            query = query.Where(x => x.CreatedDate <= toUtc.Value);
+        }
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            var s = search.ToLower();
+            query = query.Where(x => x.Items.Any(i => i.Description.ToLower().Contains(s)));
+        }
+
+        query = (sortBy?.ToLowerInvariant(), desc) switch
+        {
+            ("created", true) => query.OrderByDescending(x => x.CreatedDate),
+            ("created", false) => query.OrderBy(x => x.CreatedDate),
+            ("status", true) => query.OrderByDescending(x => x.Status).ThenByDescending(x => x.CreatedDate),
+            ("status", false) => query.OrderBy(x => x.Status).ThenBy(x => x.CreatedDate),
+            _ => query.OrderByDescending(x => x.CreatedDate)
+        };
+
+        var total = await query.CountAsync(ct);
+        var items = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync(ct);
         return (items, total);
     }
 }

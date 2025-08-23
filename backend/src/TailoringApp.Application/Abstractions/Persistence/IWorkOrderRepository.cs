@@ -13,10 +13,21 @@ public interface IWorkOrderRepository
         int page,
         int pageSize,
         string? sortBy,
-    bool desc,
-    string? status,
-    DateTime? fromUtc,
-    DateTime? toUtc,
-    string? search,
+        bool desc,
+        string? status,
+        DateTime? fromUtc,
+        DateTime? toUtc,
+        string? search,
+        CancellationToken ct);
+    Task<(IReadOnlyList<WorkOrder> Items, int TotalCount)> GetAllAsync(
+        int page,
+        int pageSize,
+        string? sortBy,
+        bool desc,
+        string? status,
+        Guid? customerId,
+        DateTime? fromUtc,
+        DateTime? toUtc,
+        string? search,
         CancellationToken ct);
 }
