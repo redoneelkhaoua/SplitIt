@@ -23,10 +23,21 @@ public sealed class WorkOrderConfig : IEntityTypeConfiguration<WorkOrder>
             i.HasKey("WorkOrderId", "Description");
             i.Property(p => p.Description).HasMaxLength(256);
             i.Property(p => p.Quantity).IsRequired();
+            i.Property(p => p.GarmentType).HasConversion<int>().IsRequired();
+            
             i.OwnsOne(p => p.UnitPrice, m =>
             {
                 m.Property(pp => pp.Amount).HasColumnType("decimal(18,2)").HasColumnName("UnitPriceAmount");
                 m.Property(pp => pp.Currency).HasMaxLength(3).HasColumnName("UnitPriceCurrency");
+            });
+
+            i.OwnsOne(p => p.Measurements, m =>
+            {
+                m.Property(mm => mm.Chest).HasColumnType("decimal(18,2)").HasColumnName("ChestMeasurement");
+                m.Property(mm => mm.Waist).HasColumnType("decimal(18,2)").HasColumnName("WaistMeasurement");
+                m.Property(mm => mm.Hips).HasColumnType("decimal(18,2)").HasColumnName("HipsMeasurement");
+                m.Property(mm => mm.Sleeve).HasColumnType("decimal(18,2)").HasColumnName("SleeveMeasurement");
+                m.Property(mm => mm.Notes).HasMaxLength(500).HasColumnName("MeasurementNotes");
             });
         });
 

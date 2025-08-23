@@ -17,7 +17,7 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.6")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -372,6 +372,9 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
                                 .HasMaxLength(256)
                                 .HasColumnType("nvarchar(256)");
 
+                            b1.Property<int>("GarmentType")
+                                .HasColumnType("int");
+
                             b1.Property<int>("Quantity")
                                 .HasColumnType("int");
 
@@ -381,6 +384,43 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("WorkOrderId");
+
+                            b1.OwnsOne("TailoringApp.Domain.WorkOrders.GarmentMeasurements", "Measurements", b2 =>
+                                {
+                                    b2.Property<Guid>("WorkOrderItemWorkOrderId")
+                                        .HasColumnType("uniqueidentifier");
+
+                                    b2.Property<string>("WorkOrderItemDescription")
+                                        .HasColumnType("nvarchar(256)");
+
+                                    b2.Property<decimal>("Chest")
+                                        .HasColumnType("decimal(18,2)")
+                                        .HasColumnName("ChestMeasurement");
+
+                                    b2.Property<decimal>("Hips")
+                                        .HasColumnType("decimal(18,2)")
+                                        .HasColumnName("HipsMeasurement");
+
+                                    b2.Property<string>("Notes")
+                                        .HasMaxLength(500)
+                                        .HasColumnType("nvarchar(500)")
+                                        .HasColumnName("MeasurementNotes");
+
+                                    b2.Property<decimal>("Sleeve")
+                                        .HasColumnType("decimal(18,2)")
+                                        .HasColumnName("SleeveMeasurement");
+
+                                    b2.Property<decimal>("Waist")
+                                        .HasColumnType("decimal(18,2)")
+                                        .HasColumnName("WaistMeasurement");
+
+                                    b2.HasKey("WorkOrderItemWorkOrderId", "WorkOrderItemDescription");
+
+                                    b2.ToTable("WorkOrderItems");
+
+                                    b2.WithOwner()
+                                        .HasForeignKey("WorkOrderItemWorkOrderId", "WorkOrderItemDescription");
+                                });
 
                             b1.OwnsOne("TailoringApp.Domain.Common.Money", "UnitPrice", b2 =>
                                 {
@@ -407,6 +447,8 @@ namespace TailoringApp.Infrastructure.Persistence.Migrations
                                     b2.WithOwner()
                                         .HasForeignKey("WorkOrderItemWorkOrderId", "WorkOrderItemDescription");
                                 });
+
+                            b1.Navigation("Measurements");
 
                             b1.Navigation("UnitPrice")
                                 .IsRequired();

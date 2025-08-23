@@ -57,8 +57,20 @@ public sealed class WorkOrdersController : ControllerBase
     [Authorize]
     public async Task<IActionResult> AddItem(Guid customerId, Guid id, [FromBody] AddItemRequest req, CancellationToken ct)
     {
-    var ok = await _sender.Send(new AddWorkOrderItemCommand(id, req.Description, req.Quantity, req.UnitPrice, req.Currency), ct);
-    return ok ? NoContent() : BadRequest("Invalid id, status, or currency");
+        var ok = await _sender.Send(new AddWorkOrderItemCommand(
+            id, 
+            req.Description, 
+            req.Quantity, 
+            req.UnitPrice, 
+            req.Currency,
+            req.GarmentType,
+            req.ChestMeasurement,
+            req.WaistMeasurement,
+            req.HipsMeasurement,
+            req.SleeveMeasurement,
+            req.MeasurementNotes
+        ), ct);
+        return ok ? NoContent() : BadRequest("Invalid id, status, or currency");
     }
 
     [HttpPut("{id:guid}/items/{description}")]
@@ -118,7 +130,18 @@ public sealed class WorkOrdersController : ControllerBase
     }
 
     public sealed record CreateRequest(string Currency, Guid? AppointmentId);
-    public sealed record AddItemRequest(string Description, int Quantity, decimal UnitPrice, string Currency);
+    public sealed record AddItemRequest(
+        string Description, 
+        int Quantity, 
+        decimal UnitPrice, 
+        string Currency,
+        string? GarmentType = null,
+        decimal? ChestMeasurement = null,
+        decimal? WaistMeasurement = null,
+        decimal? HipsMeasurement = null,
+        decimal? SleeveMeasurement = null,
+        string? MeasurementNotes = null
+    );
     public sealed record UpdateItemQuantityRequest(int Quantity);
     public sealed record SetDiscountRequest(decimal Amount, string Currency);
 }

@@ -1,0 +1,13 @@
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\bin\Debug\net9.0\TailoringApp.Domain.deps.json
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\bin\Debug\net9.0\TailoringApp.Domain.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\bin\Debug\net9.0\TailoringApp.Domain.pdb
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.csproj.AssemblyReference.cache
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.AssemblyInfoInputs.cache
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.AssemblyInfo.cs
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.sourcelink.json
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\refint\TailoringApp.Domain.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\TailoringApp.Domain.pdb
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Domain\obj\Debug\net9.0\ref\TailoringApp.Domain.dll

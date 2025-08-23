@@ -200,6 +200,25 @@ public class AppointmentsHandlersTests
             return Task.FromResult(conflict);
         }
 
+        public Task<(IReadOnlyList<Appointment> Items, int Total)> GetPagedAsync(Guid? customerId, string? status, int page, int pageSize, CancellationToken ct = default)
+        {
+            var q = _store.Values.AsEnumerable();
+            if (customerId.HasValue)
+            {
+                q = q.Where(a => a.CustomerId == customerId.Value);
+            }
+            if(!string.IsNullOrWhiteSpace(status) && !string.Equals(status, "all", StringComparison.OrdinalIgnoreCase))
+            {
+                if(Enum.TryParse<AppointmentStatus>(status, true, out var st))
+                {
+                    q = q.Where(a => a.Status == st);
+                }
+            }
+            var ordered = q.OrderByDescending(a => a.StartUtc);
+            var items = ordered.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+            return Task.FromResult(((IReadOnlyList<Appointment>)items, q.Count()));
+        }
+
         public Task SaveChangesAsync(CancellationToken ct = default) => Task.CompletedTask;
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TailoringApp.Infrastructure.Persistence;
@@ -64,6 +65,10 @@ public class CustomersAppointmentsIntegrationTests : IClassFixture<ApiFactory>
 
 public class ApiFactory : WebApplicationFactory<Program>
 {
+    public ApiFactory()
+    {
+        Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Testing");
+    }
     public async Task<HttpClient> CreateAuthenticatedClientAsync(string username = "admin", string password = "admin123")
     {
         var client = CreateClient();
@@ -74,16 +79,12 @@ public class ApiFactory : WebApplicationFactory<Program>
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
         return client;
     }
-    protected override IHost CreateHost(IHostBuilder builder)
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing");
         builder.ConfigureServices(services =>
         {
-            // Replace SQL Server with InMemory for tests
-            var descriptor = services.Single(d => d.ServiceType == typeof(DbContextOptions<TailoringDbContext>));
-            services.Remove(descriptor);
             services.AddDbContext<TailoringDbContext>(opt => opt.UseInMemoryDatabase("tests-db"));
         });
-        return base.CreateHost(builder);
     }
 }

@@ -8,5 +8,11 @@ public sealed record AddWorkOrderItemCommand(
     string Description,
     int Quantity,
     decimal UnitPrice,
-    string Currency
+    string Currency,
+    string? GarmentType = null,
+    decimal? ChestMeasurement = null,
+    decimal? WaistMeasurement = null,
+    decimal? HipsMeasurement = null,
+    decimal? SleeveMeasurement = null,
+    string? MeasurementNotes = null
 ) : IRequest<bool>;

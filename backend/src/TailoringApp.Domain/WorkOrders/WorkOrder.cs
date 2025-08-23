@@ -44,13 +44,13 @@ public sealed class WorkOrder : Entity
         AppointmentId = appointmentId;
     }
 
-    public void AddItem(string description, int quantity, Money unitPrice)
+    public void AddItem(string description, int quantity, Money unitPrice, GarmentType garmentType = GarmentType.Other, GarmentMeasurements? measurements = null)
     {
         if (Status is WorkOrderStatus.Completed or WorkOrderStatus.Cancelled)
             throw new InvalidOperationException("Cannot modify a finalized work order");
         if (!string.Equals(unitPrice.Currency, Currency, StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException("Item currency must match work order currency");
-        _items.Add(new WorkOrderItem(description, quantity, unitPrice));
+        _items.Add(new WorkOrderItem(description, quantity, unitPrice, garmentType, measurements));
     }
 
     public bool RemoveItem(int index)
@@ -78,7 +78,7 @@ public sealed class WorkOrder : Entity
         if (!found) return false;
         var rebuilt = _items
             .Select(i => string.Equals(i.Description, description, StringComparison.OrdinalIgnoreCase)
-                ? new WorkOrderItem(i.Description, quantity, i.UnitPrice)
+                ? new WorkOrderItem(i.Description, quantity, i.UnitPrice, i.GarmentType, i.Measurements)
                 : i)
             .ToList();
         _items.Clear();

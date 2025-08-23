@@ -19,8 +19,8 @@ public sealed class UpdateWorkOrderItemQuantityCommandHandler : IRequestHandler<
     var removed = entity.RemoveItem(request.Description);
     if (!removed) return false;
     await _repo.SaveChangesAsync(ct);
-    // Add with new quantity and save
-    entity.AddItem(existing.Description, request.Quantity, existing.UnitPrice);
+    // Add with new quantity and save, preserving garment type and measurements
+    entity.AddItem(existing.Description, request.Quantity, existing.UnitPrice, existing.GarmentType, existing.Measurements);
     await _repo.SaveChangesAsync(ct);
     return true;
     }

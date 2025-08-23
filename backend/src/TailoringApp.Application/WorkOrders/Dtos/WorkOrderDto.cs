@@ -2,7 +2,18 @@ using TailoringApp.Domain.WorkOrders;
 
 namespace TailoringApp.Application.WorkOrders.Dtos;
 
-public sealed record WorkOrderItemDto(string Description, int Quantity, decimal UnitPrice, string Currency);
+public sealed record WorkOrderItemDto(
+	string Description, 
+	int Quantity, 
+	decimal UnitPrice, 
+	string Currency, 
+	string GarmentType, 
+	decimal? ChestMeasurement,
+	decimal? WaistMeasurement,
+	decimal? HipsMeasurement,
+	decimal? SleeveMeasurement,
+	string? MeasurementNotes
+);
 public sealed record WorkOrderDto(
 	Guid Id,
 	Guid CustomerId,

@@ -18,12 +18,19 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
         var cs = configuration.GetConnectionString("Default")
                  ?? "Server=(localdb)\\MSSQLLocalDB;Database=TailoringDB;Trusted_Connection=True;MultipleActiveResultSets=True";
-        services.AddDbContext<TailoringDbContext>(options =>
+        // Skip registering SQL Server if: running in Testing environment (integration tests) OR already registered.
+        var alreadyHasDbContext = services.Any(s => s.ServiceType == typeof(DbContextOptions<TailoringDbContext>));
+        var isTesting = string.Equals(environment, "Testing", StringComparison.OrdinalIgnoreCase);
+        if (!alreadyHasDbContext && !isTesting)
         {
-            options.UseSqlServer(cs, sql => sql.MigrationsAssembly(typeof(TailoringDbContext).Assembly.FullName));
-        });
+            services.AddDbContext<TailoringDbContext>(options =>
+            {
+                options.UseSqlServer(cs, sql => sql.MigrationsAssembly(typeof(TailoringDbContext).Assembly.FullName));
+            });
+        }
 
         // Auth
         services.AddScoped<IAuthService, AuthService>();

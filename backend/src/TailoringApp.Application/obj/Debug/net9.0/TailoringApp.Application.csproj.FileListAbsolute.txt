@@ -1,0 +1,16 @@
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net9.0\TailoringApp.Application.deps.json
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net9.0\TailoringApp.Application.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net9.0\TailoringApp.Application.pdb
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net9.0\TailoringApp.Domain.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\bin\Debug\net9.0\TailoringApp.Domain.pdb
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.csproj.AssemblyReference.cache
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.AssemblyInfoInputs.cache
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.AssemblyInfo.cs
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.sourcelink.json
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\Tailorin.C403D93B.Up2Date
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\refint\TailoringApp.Application.dll
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\TailoringApp.Application.pdb
+C:\Users\Adelphatech\Documents\repos\SplitIt\backend\src\TailoringApp.Application\obj\Debug\net9.0\ref\TailoringApp.Application.dll
