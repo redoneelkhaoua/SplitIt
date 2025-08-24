@@ -41,7 +41,7 @@ const AppLayout: React.FC = () => {
       <aside className="sidebar" style={{gap:'1.5rem'}}>
         <div style={{display:'flex',flexDirection:'column',gap:'.35rem'}}>
           <Logo />
-          <p className="tag" style={{margin:0}}>Tailoring Console</p>
+          <p className="tag" style={{margin:0}}>Management Console</p>
         </div>
         <nav className="stack gap-sm" style={{fontSize:'.8rem'}}>
           <NavLink to="/customers" className={({isActive})=> isActive? 'nav-link active':'nav-link'}>Customers</NavLink>
@@ -52,7 +52,7 @@ const AppLayout: React.FC = () => {
       </aside>
       <div className="main">
         <div className="topbar" style={{justifyContent:'space-between'}}>
-          <div className="muted" style={{fontSize:'.75rem'}}>El Khaoua Admin</div>
+          <div className="muted" style={{fontSize:'.75rem'}}>TailoringPro Admin</div>
         </div>
         <div className="content">
           <Routes>

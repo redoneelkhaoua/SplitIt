@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { api, PagingEnvelope } from '../api/client';
 import { useCustomers } from '../state/CustomerContext';
 import { useToast } from '../state/ToastContext';
-import { CustomerSelector } from '../components/CustomerSelector';
 import { CreateWorkOrderForm } from '../components/CreateWorkOrderForm';
 
 interface WorkOrderSummary { 
@@ -17,6 +16,14 @@ interface WorkOrderSummary {
   currency: string;
   createdAt: string;
   updatedAt: string;
+}
+
+interface NewWorkOrder {
+  customerId: string;
+  priority: string;
+  dueDate: string;
+  notes: string;
+  currency: string;
 }
 
 interface PageRes { items: WorkOrderSummary[]; total: number; page: number; pageSize: number; }
@@ -38,7 +45,7 @@ async function fetchWorkOrders(
 }
 
 export const WorkOrdersListPage: React.FC = () => {
-  const { currentCustomerId, customers } = useCustomers();
+  const { customers } = useCustomers();
   const { push } = useToast();
   const navigate = useNavigate();
   
@@ -48,10 +55,18 @@ export const WorkOrdersListPage: React.FC = () => {
   
   // UI state
   const [showCreateForm, setShowCreateForm] = React.useState(false);
+  const [showCreateWorkOrder, setShowCreateWorkOrder] = React.useState(false);
   const [filterCustomer, setFilterCustomer] = React.useState('');
-  const [statusFilter, setStatusFilter] = React.useState<'all'|'pending'|'in-progress'|'completed'|'cancelled'>('all');
+  const [statusFilter, setStatusFilter] = React.useState<'all'|'draft'|'inprogress'|'completed'|'cancelled'>('all');
   const [rawSearch, setRawSearch] = React.useState('');
   const [search, setSearch] = React.useState('');
+  const [newWorkOrder, setNewWorkOrder] = React.useState<NewWorkOrder>({
+    customerId: '',
+    priority: 'medium',
+    dueDate: '',
+    notes: '',
+    currency: 'USD'
+  });
   
   // Debounced search
   React.useEffect(() => { 
@@ -59,8 +74,8 @@ export const WorkOrdersListPage: React.FC = () => {
     return () => clearTimeout(t); 
   }, [rawSearch]);
 
-  // Use filterCustomer if set, otherwise use currentCustomerId, otherwise show all
-  const effectiveCustomerId = filterCustomer || currentCustomerId || undefined;
+  // Use filterCustomer for API calls, no longer dependent on currentCustomerId
+  const effectiveCustomerId = filterCustomer || undefined;
 
   const { data, isLoading, error, refetch } = useQuery({ 
     queryKey: ['workOrders', effectiveCustomerId, page, statusFilter], 
@@ -75,6 +90,45 @@ export const WorkOrdersListPage: React.FC = () => {
   };
 
   const refresh = () => refetch();
+
+  const handleCreateWorkOrder = async () => {
+    if (!newWorkOrder.customerId.trim()) {
+      push('Please select a customer', 'error');
+      return;
+    }
+
+    try {
+      const workOrderData = {
+        ...newWorkOrder,
+        dueDate: newWorkOrder.dueDate ? new Date(newWorkOrder.dueDate).toISOString() : undefined
+      };
+
+      await api.post(`/customers/${newWorkOrder.customerId}/workorders`, workOrderData);
+      push('Work order created successfully', 'success');
+      setShowCreateWorkOrder(false);
+      setNewWorkOrder({
+        customerId: '',
+        priority: 'medium',
+        dueDate: '',
+        notes: '',
+        currency: 'USD'
+      });
+      refetch();
+    } catch(e: any) {
+      push(e?.message || 'Failed to create work order', 'error');
+    }
+  };
+
+  const resetCreateWorkOrderForm = () => {
+    setNewWorkOrder({
+      customerId: '',
+      priority: 'medium',
+      dueDate: '',
+      notes: '',
+      currency: 'USD'
+    });
+    setShowCreateWorkOrder(false);
+  };
 
   // Filter locally by search (work order ID or customer name) AFTER fetch
   const filtered = React.useMemo(() => {
@@ -94,11 +148,6 @@ export const WorkOrdersListPage: React.FC = () => {
 
   return (
     <div className="stack gap-md">
-      <div className="card">
-        <h2 className="card-title" style={{marginTop:0}}>Customer</h2>
-        <CustomerSelector />
-      </div>
-      
       {effectiveCustomerId && showCreateForm && (
         <div className="card">
           <CreateWorkOrderForm onCreated={() => {
@@ -112,12 +161,18 @@ export const WorkOrdersListPage: React.FC = () => {
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:16}}>
           <h2 className="card-title" style={{marginTop:0}}>Work Orders list</h2>
           <div style={{display:'flex',gap:8}}>
+            <button 
+              className="btn primary" 
+              onClick={() => setShowCreateWorkOrder(true)}
+            >
+              + Add Work Order
+            </button>
             {effectiveCustomerId && (
               <button 
-                className="btn primary" 
+                className="btn outline" 
                 onClick={() => setShowCreateForm(!showCreateForm)}
               >
-                {showCreateForm ? 'Cancel' : '+ Add'}
+                {showCreateForm ? 'Cancel' : '+ Add Item'}
               </button>
             )}
             <button className="btn" onClick={refresh}>Refresh</button>
@@ -148,8 +203,8 @@ export const WorkOrdersListPage: React.FC = () => {
             style={{fontSize:'.65rem',padding:'6px 10px',borderRadius:10,border:'1px solid var(--color-border)',background:'var(--color-surface-alt)'}}
           >
             <option value="all">All Statuses</option>
-            <option value="pending">Pending</option>
-            <option value="in-progress">In Progress</option>
+            <option value="draft">Draft</option>
+            <option value="inprogress">In Progress</option>
             <option value="completed">Completed</option>
             <option value="cancelled">Cancelled</option>
           </select>
@@ -160,7 +215,7 @@ export const WorkOrdersListPage: React.FC = () => {
 
         {error && <div className="alert error">Failed to load work orders.</div>}
         
-        <div style={{overflowX:'auto'}}>
+        <div style={{overflowX:'auto', overflowY:'visible'}}>
           <table style={{width:'100%',borderCollapse:'collapse',fontSize:'.75rem'}}>
             <thead>
               <tr style={{textAlign:'left',fontSize:'.6rem',letterSpacing:'.7px',textTransform:'uppercase',color:'var(--color-text-dim)'}}>
@@ -182,9 +237,13 @@ export const WorkOrdersListPage: React.FC = () => {
                     <td style={{padding:'8px',fontFamily:'ui-monospace'}}>{w.id.slice(0,8)}…</td>
                     <td style={{padding:'8px'}}>{customer ? `${customer.firstName} ${customer.lastName}` : '-'}</td>
                     <td style={{padding:'8px'}}><span className={`badge status-${w.status.toLowerCase().replace(' ', '-')}`}>{w.status}</span></td>
-                    <td style={{padding:'8px',fontWeight:600}}>{w.currency} {(w.total/100).toFixed(2)}</td>
-                    <td style={{padding:'8px',fontFamily:'ui-monospace'}}>{new Date(w.createdAt).toLocaleString([], { month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'})}</td>
-                    <td style={{padding:'8px',fontFamily:'ui-monospace'}}>{new Date(w.updatedAt).toLocaleString([], { month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'})}</td>
+                    <td style={{padding:'8px',fontWeight:600}}>{w.currency} {(w.total || 0).toFixed(2)}</td>
+                    <td style={{padding:'8px',fontFamily:'ui-monospace'}}>
+                      {w.createdAt ? new Date(w.createdAt).toLocaleString([], { month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'}) : '—'}
+                    </td>
+                    <td style={{padding:'8px',fontFamily:'ui-monospace'}}>
+                      {w.updatedAt ? new Date(w.updatedAt).toLocaleString([], { month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'}) : '—'}
+                    </td>
                     <td style={{padding:'8px',position:'relative',textAlign:'right'}}>
                       <WorkOrderActions workOrder={w} onChanged={refetch} />
                     </td>
@@ -198,6 +257,98 @@ export const WorkOrdersListPage: React.FC = () => {
           </table>
         </div>
       </div>
+
+      {/* Create Work Order Modal */}
+      {showCreateWorkOrder && (
+        <div className="modal-overlay" onClick={resetCreateWorkOrderForm}>
+          <div className="modal-shell" style={{width: 500}} onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Create New Work Order</h3>
+              <button className="modal-close" onClick={resetCreateWorkOrderForm}>×</button>
+            </div>
+            <div className="modal-body">
+              <div className="form-vertical">
+                <div className="form-field">
+                  <label>Customer *</label>
+                  <select
+                    value={newWorkOrder.customerId}
+                    onChange={e => setNewWorkOrder({...newWorkOrder, customerId: e.target.value})}
+                    required
+                  >
+                    <option value="">Select a customer</option>
+                    {customers.map(customer => (
+                      <option key={customer.id} value={customer.id}>
+                        {customer.firstName} {customer.lastName}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div className="form-row">
+                  <div className="form-field">
+                    <label>Priority</label>
+                    <select
+                      value={newWorkOrder.priority}
+                      onChange={e => setNewWorkOrder({...newWorkOrder, priority: e.target.value})}
+                    >
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
+                      <option value="urgent">Urgent</option>
+                    </select>
+                  </div>
+
+                  <div className="form-field">
+                    <label>Currency *</label>
+                    <select
+                      value={newWorkOrder.currency}
+                      onChange={e => setNewWorkOrder({...newWorkOrder, currency: e.target.value})}
+                      required
+                    >
+                      <option value="USD">USD ($)</option>
+                      <option value="EUR">EUR (€)</option>
+                      <option value="GBP">GBP (£)</option>
+                      <option value="CAD">CAD (C$)</option>
+                      <option value="AUD">AUD (A$)</option>
+                      <option value="JPY">JPY (¥)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-field">
+                  <label>Due Date</label>
+                  <input
+                    type="date"
+                    value={newWorkOrder.dueDate}
+                    onChange={e => setNewWorkOrder({...newWorkOrder, dueDate: e.target.value})}
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label>Notes</label>
+                  <textarea
+                    value={newWorkOrder.notes}
+                    onChange={e => setNewWorkOrder({...newWorkOrder, notes: e.target.value})}
+                    placeholder="Additional notes or instructions"
+                    rows={3}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn outline" onClick={resetCreateWorkOrderForm}>Cancel</button>
+              <button 
+                type="button" 
+                className="btn primary" 
+                onClick={handleCreateWorkOrder}
+                disabled={!newWorkOrder.customerId.trim() || !newWorkOrder.currency.trim()}
+              >
+                Create Work Order
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -274,7 +425,7 @@ const WorkOrderActions: React.FC<{ workOrder: WorkOrderSummary; onChanged: ()=>v
           borderRadius:10,
           boxShadow:'var(--shadow-lg)',
           padding:6,
-          zIndex:300,
+          zIndex:1000, // Increased z-index
           minWidth:150,
           display:'flex',
           flexDirection:'column',
@@ -287,34 +438,34 @@ const WorkOrderActions: React.FC<{ workOrder: WorkOrderSummary; onChanged: ()=>v
           >
             View Details
           </button>
-          {workOrder.status === 'Pending' && (
+          {workOrder.status.toLowerCase() === 'draft' && (
             <button 
               className="btn primary" 
               style={{padding:'4px 8px',fontSize:11,justifyContent:'flex-start'}} 
-              onClick={() => updateStatus('InProgress')}
+              onClick={() => updateStatus('inprogress')}
             >
               Start Work
             </button>
           )}
-          {workOrder.status === 'InProgress' && (
+          {workOrder.status.toLowerCase() === 'inprogress' && (
             <button 
               className="btn primary" 
               style={{padding:'4px 8px',fontSize:11,justifyContent:'flex-start'}} 
-              onClick={() => updateStatus('Completed')}
+              onClick={() => updateStatus('completed')}
             >
               Mark Complete
             </button>
           )}
-          {(workOrder.status === 'Pending' || workOrder.status === 'InProgress') && (
+          {(workOrder.status.toLowerCase() === 'draft' || workOrder.status.toLowerCase() === 'inprogress') && (
             <button 
               className="btn" 
               style={{padding:'4px 8px',fontSize:11,justifyContent:'flex-start'}} 
-              onClick={() => updateStatus('Cancelled')}
+              onClick={() => updateStatus('cancelled')}
             >
               Cancel
             </button>
           )}
-          {workOrder.status === 'Cancelled' && (
+          {workOrder.status.toLowerCase() === 'cancelled' && (
             <button 
               className="btn danger" 
               style={{padding:'4px 8px',fontSize:11,justifyContent:'flex-start'}} 
@@ -323,7 +474,7 @@ const WorkOrderActions: React.FC<{ workOrder: WorkOrderSummary; onChanged: ()=>v
               Delete
             </button>
           )}
-          {(workOrder.status === 'Completed' || workOrder.status === 'Cancelled') && workOrder.status !== 'Cancelled' && (
+          {(workOrder.status.toLowerCase() === 'completed' || workOrder.status.toLowerCase() === 'cancelled') && workOrder.status.toLowerCase() !== 'cancelled' && (
             <div className="muted" style={{padding:'2px 6px',fontSize:10}}>Limited actions</div>
           )}
         </div>

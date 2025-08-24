@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using TailoringApp.Application.WorkOrders.Queries.GetAllWorkOrders;
 using TailoringApp.Application.WorkOrders.Queries.GetWorkOrderDetails;
 using TailoringApp.Application.WorkOrders.Queries.GetWorkOrderSummary;
+using TailoringApp.Application.WorkOrders.Commands.Start;
+using TailoringApp.Application.WorkOrders.Commands.Complete;
+using TailoringApp.Application.WorkOrders.Commands.Cancel;
 using Microsoft.AspNetCore.Authorization;
 
 namespace TailoringApp.API.Controllers;
@@ -42,4 +45,25 @@ public sealed class AllWorkOrdersController : ControllerBase
         var details = await _sender.Send(new GetWorkOrderDetailsQuery(workOrder.CustomerId, id), ct);
         return details is null ? NotFound() : Ok(details);
     }
+
+    [HttpPatch("{id:guid}/status")]
+    public async Task<IActionResult> UpdateStatus(Guid id, [FromBody] UpdateStatusRequest request, CancellationToken ct)
+    {
+        // First get basic work order info to find the customerId
+        var workOrder = await _sender.Send(new GetWorkOrderSummaryQuery(id), ct);
+        if (workOrder == null) return NotFound();
+        
+        // Update the status using the appropriate command
+        bool ok = request.Status.ToLower() switch
+        {
+            "inprogress" => await _sender.Send(new StartWorkOrderCommand(id), ct),
+            "completed" => await _sender.Send(new CompleteWorkOrderCommand(id), ct),
+            "cancelled" => await _sender.Send(new CancelWorkOrderCommand(id), ct),
+            _ => false
+        };
+        
+        return ok ? NoContent() : BadRequest("Invalid status");
+    }
 }
+
+public record UpdateStatusRequest(string Status);

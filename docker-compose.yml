@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -7,23 +6,47 @@ services:
       - SA_PASSWORD=TailoringApp123!
     ports:
       - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - tailoring-network
+
   api:
     build:
-      context: ./backend/src/TailoringApp.API
-      dockerfile: Dockerfile
+      context: ./backend
+      dockerfile: src/TailoringApp.API/Dockerfile
     environment:
+      - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:5000
       - ConnectionStrings__Default=Server=db,1433;Database=TailoringDB;User Id=sa;Password=TailoringApp123!;TrustServerCertificate=True;MultipleActiveResultSets=True
+      - Jwt__Key=SuperSecretKeyThatIsAtLeast32BytesLongForJWTSigning123456789
+      - Jwt__Issuer=TailoringApp
+      - Jwt__Audience=TailoringAppClient
     depends_on:
       - db
     ports:
       - "5000:5000"
+    networks:
+      - tailoring-network
+    restart: unless-stopped
+
   frontend:
     build:
-      context: ./frontend/splitit-web
+      context: ./frontend
+      dockerfile: Dockerfile
     environment:
       - VITE_API_BASE_URL=http://localhost:5000
     depends_on:
       - api
     ports:
-      - "3000:3000"
+      - "3000:80"
+    networks:
+      - tailoring-network
+    restart: unless-stopped
+
+networks:
+  tailoring-network:
+    driver: bridge
+
+volumes:
+  sqlserver_data:
