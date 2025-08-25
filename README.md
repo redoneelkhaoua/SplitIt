@@ -1,4 +1,4 @@
-# 🧵 Custom Tailoring Management System (TailoringApp)
+# 🧵 Custom Tailoring Management System (TailoringPro)
 
 A modern, full-stack tailoring business management application built with Clean Architecture principles, featuring customer management, work order tracking, and item management with detailed measurements.
 
@@ -79,8 +79,8 @@ The fastest way to get the application running is with Docker Compose:
 
 ```bash
 # Clone the repository
-git clone https://github.com/redoneelkhaoua/SplitIt.git
-cd SplitIt
+git clone https://github.com/redoneelkhaoua/TailoringManagement2-Elkhaoua.git
+cd TailoringManagement2-Elkhaoua
 
 # Start all services
 docker compose up --build
@@ -100,6 +100,8 @@ docker compose up --build -d
 |----------|----------|-------|-------------|
 | admin    | admin123 | Admin | Full access to all features |
 | staff    | staff123 | Staff | Standard user access |
+
+*Note: These are the default credentials for the TailoringPro application demo.*
 
 ## 💻 Development Setup
 
@@ -168,7 +170,7 @@ VITE_API_BASE_URL=http://localhost:52244
 ## 📁 Project Structure
 
 ```
-SplitIt/
+TailoringManagement2-Elkhaoua/
 ├── backend/
 │   ├── src/
 │   │   ├── TailoringApp.API/          # Web API layer
@@ -480,6 +482,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Built with ❤️ for the tailoring industry**
+
+**Repository**: https://github.com/redoneelkhaoua/TailoringManagement2-Elkhaoua
 
 For questions or support, please open an issue on GitHub.
 
